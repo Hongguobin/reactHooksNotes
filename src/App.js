@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+// React Hooks不能出现在条件判断语句中，因为它必须有完全一样的渲染顺序
+
+function Example() {
+  const [ age, setAge ] = useState(22)
+  const [ sex, setSex ] = useState('男')
+  const [ work, setWork ] = useState('前端程序员')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>JSBin 今年：{age}岁</p>
+      <p>性别：{sex}</p>
+      <p>工作是：{work}</p>
     </div>
-  );
+  )
 }
-
-export default App;
+export default Example
